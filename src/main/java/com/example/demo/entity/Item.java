@@ -20,6 +20,23 @@ public class Item {
 	private String name;
 	private Integer price;
 	
+	/**
+	 * デフォルトコンストラクタ
+	 */
+	public Item() {}
+	
+	/**
+	 * コンストラクタ
+	 * @param categoryId
+	 * @param name
+	 * @param price
+	 */
+	public Item(Integer categoryId, String name, Integer price) {
+		this.categoryId = categoryId;
+		this.name = name;
+		this.price = price;
+	}
+	
 	public Integer getId() {
 		return id;
 	}

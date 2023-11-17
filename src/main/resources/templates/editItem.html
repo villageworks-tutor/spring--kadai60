@@ -5,23 +5,29 @@
 <title>商品登録</title>
 </head>
 <body>
-	<h1>商品登録</h1>
+	<h1>商品更新</h1>
+	<th:block th:if="${item}">
 	<form action="/items/add" method="post">
 		<table class="form" border="1">
 			<tr  class="form__row">
+				<th class="form__cell--header">商品ID</th>
+				<td class="form__cell--data">[[${item.id}]]</td>
+			</tr>
+			<tr  class="form__row">
 				<th class="form__cell--header">カテゴリーID</th>
-				<td class="form__cell--data"><input type="text" name="categoryId" /></td>
+				<td class="form__cell--data"><input type="text" name="categoryId" th:value="${item.categoryId}" /></td>
 			</tr>
 			<tr  class="form__row">
 				<th class="form__cell--header">商品名</th>
-				<td class="form__cell--data"><input type="text" name="name" /></td>
+				<td class="form__cell--data"><input type="text" name="name" th:value="${item.name}" /></td>
 			</tr>
 			<tr  class="form__row">
 				<th class="form__cell--header">値段</th>
-				<td class="form__cell--data"><input type="number" name="price" /></td>
+				<td class="form__cell--data"><input type="number" name="price" th:value="${item.price}" /></td>
 			</tr>
 		</table>
 		<button class="input__button--store">登録</button>
 	</form>
+	</th:block>
 </body>
 </html>

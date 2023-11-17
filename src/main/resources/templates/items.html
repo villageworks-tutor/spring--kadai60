@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.Thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>商品一覧</title>
+</head>
+<body>
+	<header>
+		<h1 class="header__body">商品一覧</h1>
+	</header>
+	<!-- 商品リストが送信されている場合は表示する -->
+	<th:block th:if="${itemList}">
+	<table class="list" border="1">
+		<tr class="list__row--header">
+			<th class="list__header--cell">商品ID</th>
+			<th class="list__header--cell">商品名</th>
+			<th class="list__header--cell">値段</th>
+		</tr>
+		<tr class="list__row---data" th:each="item:${itemList}">
+			<td class="list__data--cell" th:text="${item.id}"></td>
+			<td class="list__data--cell" th:text="${item.name}"></td>
+			<td class="list__data--cell" th:text="${item.price}"></td>
+		</tr>
+	</table>
+	</th:block>
+</body>
+</html>

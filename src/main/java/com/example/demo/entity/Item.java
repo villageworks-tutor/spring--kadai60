@@ -26,7 +26,7 @@ public class Item {
 	public Item() {}
 	
 	/**
-	 * コンストラクタ
+	 * コンストラクタ：新規追加対象のインスタンス化用
 	 * @param categoryId
 	 * @param name
 	 * @param price
@@ -37,6 +37,18 @@ public class Item {
 		this.price = price;
 	}
 	
+	/**
+	 * コンストラクタ：更新対象のインスタンス化用
+	 * @param id
+	 * @param categoryId
+	 * @param name
+	 * @param price
+	 */
+	public Item(Integer id, Integer categoryId, String name, Integer price) {
+		this(categoryId, name, price);
+		this.id = id;
+	}
+
 	public Integer getId() {
 		return id;
 	}

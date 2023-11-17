@@ -63,4 +63,19 @@ public class ItemController {
 		return "editItem";
 	}
 	
+	@PostMapping("/items/{id}/edit")
+	public String update(
+			@PathVariable("id") Integer id,
+			@RequestParam("categoryId") Integer categoryId,
+			@RequestParam("name") String name,
+			@RequestParam("price") Integer price,
+			Model model) {
+		// パスパラメータとリクエストパラメータをもとにItemクラスをインスタンス化
+		Item item = new Item(id, categoryId, name, price);
+		// 更新処理を実行
+		itemRepository.save(item);
+		// 画面遷移
+		return "redirect:/items";
+	}
+	
 }

@@ -16,6 +16,7 @@
 			<th class="list__header--cell">商品名</th>
 			<th class="list__header--cell">値段</th>
 			<th class="list__header--cell">更新</th>
+			<th class="list__header--cell">削除</th>
 		</tr>
 		<tr class="list__row---data" th:each="item:${itemList}">
 			<td class="list__data--cell" th:text="${item.id}"></td>
@@ -24,6 +25,11 @@
 			<td class="list__data--cell">
 				<form th:action="'/items/' + ${item.id} + '/edit'" method="get">
 					<button class="input__button--update">更新</button>
+				</form>
+			</td>
+			<td class="list__data--cell">
+				<form th:action="'/items/' + ${item.id} + '/delete'" method="post">
+					<button class="input__button--update">削除</button>
 				</form>
 			</td>
 		</tr>

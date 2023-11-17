@@ -7,7 +7,7 @@
 <body>
 	<h1>商品更新</h1>
 	<th:block th:if="${item}">
-	<form action="/items/add" method="post">
+	<form th:action="'/items/'  + ${item.id} + '/edit'" method="post">
 		<table class="form" border="1">
 			<tr  class="form__row">
 				<th class="form__cell--header">商品ID</th>

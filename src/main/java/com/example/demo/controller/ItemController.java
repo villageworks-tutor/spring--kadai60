@@ -26,4 +26,11 @@ public class ItemController {
 		// 画面遷移
 		return "items";
 	}
+	
+	// 新規登録画面表示
+	@GetMapping("/items/add")
+	public String create() {
+		return "addItem";
+	}
+	
 }

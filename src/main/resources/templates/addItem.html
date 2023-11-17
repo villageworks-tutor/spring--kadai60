@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.Thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>商品登録</title>
+</head>
+<body>
+	<h1>商品登録</h1>
+	<form action="/items/add" method="post">
+		<table class="form" border="1">
+			<tr  class="form__row">
+				<th class="form__cell--header">カテゴリーID</th>
+				<td class="form__cell--data"><input type="text" name="categoryId" /></td>
+			</tr>
+			<tr  class="form__row">
+				<th class="form__cell--header">商品名</th>
+				<td class="form__cell--data"><input type="text" name="name" /></td>
+			</tr>
+			<tr  class="form__row">
+				<th class="form__cell--header">値段</th>
+				<td class="form__cell--data"><input type="number" name="price" /></td>
+			</tr>
+		</table>
+		<button class="input__button">登録</button>
+	</form>
+</body>
+</html>

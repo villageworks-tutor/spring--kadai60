@@ -51,6 +51,7 @@ public class ItemController {
 		return "redirect:/items";
 	}
 	
+	// 更新画面表示
 	@GetMapping("/items/{id}/edit")
 	public String edit(
 			@PathVariable("id") Integer id,
@@ -63,6 +64,7 @@ public class ItemController {
 		return "editItem";
 	}
 	
+	// 更新処理
 	@PostMapping("/items/{id}/edit")
 	public String update(
 			@PathVariable("id") Integer id,
@@ -74,6 +76,17 @@ public class ItemController {
 		Item item = new Item(id, categoryId, name, price);
 		// 更新処理を実行
 		itemRepository.save(item);
+		// 画面遷移
+		return "redirect:/items";
+	}
+	
+	// 削除処理
+	@PostMapping("/items/{id}/delete")
+	public String delete(
+			@PathVariable("id") Integer id, 
+			Model model) {
+		// 削除処理を実行
+		itemRepository.deleteById(id);
 		// 画面遷移
 		return "redirect:/items";
 	}
